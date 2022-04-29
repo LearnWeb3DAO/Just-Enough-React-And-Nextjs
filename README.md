@@ -100,7 +100,7 @@ Let's take a look at an example. Which of these two codes is more readable?
 </div>
 ```
 
-```jsx=
+```jsx
 function Cards() {
     return (
         <div className="cards">
