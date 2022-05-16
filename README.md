@@ -521,8 +521,11 @@ function CounterWithRef() {
 If you run the above code, you will notice that every time you click the button, the value is incremented and printed in the browser console, but the HTML view doesn't actually update. In fact, the HTML view doesn't display anything, because the initial value of `myNumber.current` is `undefined` and since the HTML doesn't update, it stays `undefined` as far as the HTML is concerned even though the value is actually being updated.
 
 #### #2 - Synchronous Updates
+
 ![](https://i.imgur.com/QZk8FcK.jpg)
+
 ![](https://i.imgur.com/ujZNqIA.jpg)
+
 Something we didn't mention before about `useState` is that when we update a state variable using the `setXYZ` functions, it actually doesn't get updated instantly.
 
 Setting a new value for state variables happens asynchronously in React, which means if you try to use the state variable's value immediately after setting it to a new value, you might not actually see the new value being reflected as it happens asynchronously.
@@ -603,7 +606,7 @@ For example, if you added an image called `avatar.png` into your `public/` folde
 While this may seem weird because your component lives inside the `src/` folder and not the `public/` folder - the reason it works is because the image lives in the same folder as `index.html` - and `index.html` is where your React code actually ends up. So when referencing an image using the relative path of `/avatar.png`, it knows that `avatar.png` must be inside the `public` folder.
 
 ## Backend Time
-![](https://i.imgur.com/kYixP2P.png)
+![](https://i.imgur.com/eU81Qd0.png)
 
 
 So far we have been discussing React, and all it's frontend capabilities. But what about backends? 
@@ -631,7 +634,7 @@ Similar to `create-react-app`, Next has a tool called `create-next-app` that can
 
 When you create a new Next.js project, you will end up with a file structure that looks like this:
 
-![](https://i.imgur.com/eU81Qd0.png)
+![](https://i.imgur.com/KDx0RzY.png)
 
 This is lot of files! But don't worry, a lot of it is similar to what we have already discussed for React.
 
