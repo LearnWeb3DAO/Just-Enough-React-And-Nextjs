@@ -2,7 +2,7 @@
 
 In the Freshman Track, we built a very simple dApp that used HTML, CSS, and some Javascript. In the real world, however, these type of 'vanilla' website implementations are a thing of the past. 
 
-Today, we use web frameworks to simplify the web development process. Is it simpler though? Depends on who's perspective you're looking from. If you're just starting out and have never done this before, it may take some time till you understand all the necessary concepts. But, in the long run, you will thank yourself and be happy that you took the time to learn it.
+Today, we use web frameworks to simplify the web development process. Is it simpler though? Depends on whose perspective you're looking from. If you're just starting out and have never done this before, it may take some time till you understand all the necessary concepts. But, in the long run, you will thank yourself and be happy that you took the time to learn it.
 
 The biggest and most common web frameworks used today are:
 - [React](https://reactjs.org)
@@ -18,7 +18,7 @@ React is a web framework that makes it easy to build and reason about the 'view'
 
 Normal Javascript functions return Javascript-esque things - strings, numbers, booleans, objects, etc. React basically combined Javascript and HTML to produce a language they call **JSX**. In JSX, Javascript-like functions return HTML instead of regular Javascript things. That's basically it.
 
-The combination of Javascript functions that return HTML are called **Components**. Components are written in JSX, and though they might seem awkward at first, are actually quite easy to work with once you get used to it.
+The combination of Javascript functions that return HTML are called **Components**. Components are written in JSX. Though seemingly awkward at first, they are actually quite easy to work with once you get used to it.
 
 Here's an example of a simple component:
 
@@ -58,7 +58,7 @@ function ShoppingList() {
 
 **[Run it yourself to see it in action](https://codesandbox.io/s/confident-tesla-5l3k1t?file=/src/App.js)**
 
-Wow, look at that. We just used Javascript inside HTML. In JSX, you can write Javascript inside HTML by wrapping the JS code in curly braces `{` and `}`. Actually though, if you think about this a little more, you will realize what is happening. `.map()` is a Javascript function, which loops over an array and returns something for each item. In this case, it is looping over the `items` array and returning an `li` element, that has the value of the Javascript variable `item` within it, which is HTML. Get it? 🤔
+Wow, look at that! We just used Javascript inside HTML. In JSX, you can write Javascript inside HTML by wrapping the JS code in curly braces `{` and `}`. Actually though, if you think about this a little more, you will realize what is happening. `.map()` is a Javascript function, which loops over an array and returns something for each item. In this case, it is looping over the `items` array and returning an `li` element, that has the value of the Javascript variable `item` within it, which is HTML. Get it? 🤔
 
 Inside our component, we basically embedded another component. The map function is a JS function that returns HTML. It is a component. Even though it is not explicitly defined as a top level function, it is still a component. 
 
@@ -134,7 +134,7 @@ The plain HTML example reused the same code three times, even though the only th
 
 In JSX, we can abstract away each `Card` as a component, which takes certain data from it's parent component (in this case, `Cards`). parent component passes data to the child through HTML-like attributes (`name="Alice"`), and the child accesses their values like a JS function receiving a JS object as an argument. The `Card` component can then return HTML with variable data inside it depending on what it received from the parent.
 
-This code is much more easily reusable and extendable. Want to change slightly how all the cards look? Just modify a single component! Not all the copy-pasted HTML.
+This code is much more easily reusable and extendable. Want to slightly change how all the cards look? Just modify a single component! Not all the copy-pasted HTML.
 
 ## Interactive Components
 Alright, so we can now pass data between components. That is all good, but we haven't yet added interactivity. Things like being able to run some code when a button is clicked, or when text is typed into an input box, etc.
@@ -240,7 +240,7 @@ React Hooks are functions that 'hook' into different parts of React Components a
 
 ### useState
 
-There are a lot of times where you do want the HTML view to update based on some variable's value changing. We can use the `useState` hook to maintain a variable which automatically re-renders the HTML displayed on the screen every time it's value is changed. Here's an example:
+There are a lot of times when you want the HTML view to update based on some variable's value changing. We can use the `useState` hook to maintain a variable which automatically re-renders the HTML displayed on the screen every time its value is changed. Here's an example:
 
 ```jsx
 function ThisWorks() {
@@ -374,7 +374,7 @@ So we can manage state now, that's great! State changes also affect our rendered
 
 But, often times, there is a need to automatically run some code when the page is first loaded - perhaps to fetch data from a server or the blockchain - and also the need to automatically run some code when a certain state variable changes.
 
-These type of functions are called side effects. React gives us the `useEffect` hook which allows us to write these kinds of effects. `useEffect` takes two arguments - a function and a dependency array. The function is the code that is run when the effect is ran, and the dependency array specifies *when* to trigger the side effect. 
+These type of functions are called side effects. React gives us the `useEffect` hook which allows us to write these kinds of effects. `useEffect` takes two arguments - a function and a dependency array. The function is the code that runs when the effect is run, and the dependency array specifies *when* to trigger the side effect. 
 
 Consider an example where when the website is first loaded, it wants to load some data from the server. While doing so, it wants to display the user a loading screen, and then once the data has been loaded, remove the loading screen and show the actual content. How do we do this?
 
@@ -398,8 +398,8 @@ function LoadDataFromServer() {
     setLoading(false);
   }
 
-  // loadData is the function that is ran
-  // An empty dependency array means this code is ran
+  // loadData is the function that is run
+  // An empty dependency array means this code is run
   // once when the page loads
   useEffect(() => {
     loadData();
@@ -421,7 +421,7 @@ The `useEffect` calls `loadData` when the page is first loaded - thanks to the e
 
 This is good for running code when the page first loads, but what about running some piece of code every time a state variable's value changes? For example, when you're searching for a person's name on Facebook, how does Facebook fetch and display recommendations every time you add/remove a character?
 
-You can also do that with `useEffect`, by providing the state variable in the dependency array. Every time the value of that variable changes, the effect will be ran.
+You can also do that with `useEffect`, by providing the state variable in the dependency array. Every time the value of that variable changes, the effect will be run.
 
 ```jsx
 function DependentEffect() {
@@ -460,7 +460,7 @@ function DependentEffect() {
 
 **[Run it yourself to see it in action](https://codesandbox.io/s/cold-darkness-eub0eh?file=/src/App.js)**
 
-If you run the above code, and try typing some letters, you will see the reccomendations list automatically gets updated as you add/remove new characters in the search box. This is because when you update the input box, the value of `searchText` is updated through the `onChange` handler, which triggers the `useEffect`, which updates the `recommendations` list, which updates the HTML view.
+If you run the above code, and try typing some letters, you will see the recommendations list automatically gets updated as you add/remove new characters in the search box. This is because when you update the input box, the value of `searchText` is updated through the `onChange` handler, which triggers the `useEffect`, which updates the `recommendations` list, which updates the HTML view.
 
 You can also similarly create side effects which are dependent on multiple state variables, not just one. If any of the dependent variables change, the side effect is run. You do this by just adding more state variables to the dependency array.
 
@@ -521,6 +521,8 @@ function CounterWithRef() {
 If you run the above code, you will notice that every time you click the button, the value is incremented and printed in the browser console, but the HTML view doesn't actually update. In fact, the HTML view doesn't display anything, because the initial value of `myNumber.current` is `undefined` and since the HTML doesn't update, it stays `undefined` as far as the HTML is concerned even though the value is actually being updated.
 
 #### #2 - Synchronous Updates
+![](https://i.imgur.com/QZk8FcK.jpg)
+![](https://i.imgur.com/ujZNqIA.jpg)
 Something we didn't mention before about `useState` is that when we update a state variable using the `setXYZ` functions, it actually doesn't get updated instantly.
 
 Setting a new value for state variables happens asynchronously in React, which means if you try to use the state variable's value immediately after setting it to a new value, you might not actually see the new value being reflected as it happens asynchronously.
@@ -618,7 +620,7 @@ First of all, as the title and intro may have hinted to you, Next allows you to 
 
 Secondly, Next makes creating multi-page web apps very easy. React was originally designed to help create Single-Page Applications (SPAs), and components are great for that! But what if your website has multiple pages? For example `https://learnweb3.io/` and `https://learnweb3.io/about` and `https://learnweb3.io/tracks` etc.
 
-For this, libraries such as `React Router` were introduced, which made it possible, but also were a bit cumbersome. Next simplified this a lot by allowing for automatic page routing based on filename. 
+For this, libraries such as `React Router` were introduced, which made it possible, but also were a bit cumbersome. 'Next' simplified this a lot by allowing for automatic page routing based on filename. 
 
 Lastly, Next also features Server Side Rendering (SSR) and Static Site Generation (SSG). These are not features we will use within our tracks, so I will not spend too much time here, but feel free to go through the Recommended Readings later on if you'd like to learn more about them.
 
@@ -629,11 +631,11 @@ Similar to `create-react-app`, Next has a tool called `create-next-app` that can
 
 When you create a new Next.js project, you will end up with a file structure that looks like this:
 
-![](https://i.imgur.com/KDx0RzY.png)
+![](https://i.imgur.com/eU81Qd0.png)
 
 This is lot of files! But don't worry, a lot of it is similar to what we have already discussed for React.
 
-The `public/` folder works exactly the same way, with the exception of containing an `index.html` file. However, if you wanted to add images, icons, fonts, music, etc. you would place them all in the `public/` folder.
+The `public/` folder works exactly the same way, with the exception of not containing an `index.html` file. However, if you wanted to add images, icons, fonts, music, etc. you would place them all in the `public/` folder.
 
 The `styles/` folder is a good addition, providing a dedicated spot for all your CSS files.
 
