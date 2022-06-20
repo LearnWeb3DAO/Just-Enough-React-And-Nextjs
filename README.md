@@ -18,6 +18,8 @@ React is a web framework that makes it easy to build and reason about the 'view'
 
 Normal Javascript functions return Javascript-esque things - strings, numbers, booleans, objects, etc. React basically combined Javascript and HTML to produce a language they call **JSX**. In JSX, Javascript-like functions return HTML instead of regular Javascript things. That's basically it.
 
+<Quiz questionId="8c7c3dd2-2297-4cdb-933b-93c38fb64ecd" />
+
 The combination of Javascript functions that return HTML are called **Components**. Components are written in JSX. Though seemingly awkward at first, they are actually quite easy to work with once you get used to it.
 
 Here's an example of a simple component:
@@ -63,6 +65,8 @@ Wow, look at that! We just used Javascript inside HTML. In JSX, you can write Ja
 Inside our component, we basically embedded another component. The map function is a JS function that returns HTML. It is a component. Even though it is not explicitly defined as a top level function, it is still a component. 
 
 **Embedding components inside other components is the power of React.** This is called **Composition**. We are composing together multiple Javascript functions that return HTML, and building up a single combined HTML document from it that will be displayed on the web app.
+
+<Quiz questionId="4ac6b0df-759d-4f46-a67b-175c55d75aa6" />
 
 ## Data Passing between Components
 
@@ -134,7 +138,11 @@ The plain HTML example reused the same code three times, even though the only th
 
 In JSX, we can abstract away each `Card` as a component, which takes certain data from it's parent component (in this case, `Cards`). parent component passes data to the child through HTML-like attributes (`name="Alice"`), and the child accesses their values like a JS function receiving a JS object as an argument. The `Card` component can then return HTML with variable data inside it depending on what it received from the parent.
 
+<Quiz questionId="febb9535-244f-4836-abd2-8aa06351f8a2" />
+
 This code is much more easily reusable and extendable. Want to slightly change how all the cards look? Just modify a single component! Not all the copy-pasted HTML.
+
+<Quiz questionId="e7dfcdde-d2e1-47ec-947a-1a134ce8378f" />
 
 ## Interactive Components
 Alright, so we can now pass data between components. That is all good, but we haven't yet added interactivity. Things like being able to run some code when a button is clicked, or when text is typed into an input box, etc.
@@ -157,6 +165,8 @@ otherFunc(); // will throw an error! undefined here
 ```
 
 `otherFunc` is only available for use inside the `someFunc` itself. This is a rarely used feature in regular Javascript, but is very heavily used when working with React. Let's see why with an example.
+
+<Quiz questionId="bda73acd-8b42-4918-a2d8-e3a1b5596f3e" />
 
 ```jsx
 function Button() {
@@ -236,6 +246,8 @@ function DoesNotWork() {
 
 No matter how many times you click the `Increment` button, the displayed number on the screen will be stuck at `0`. This is because when you update regular variables like `myNumber` from within a React component, even though the value is updated, React does not actually re-render the view of the web app. It does not automatically update the HTML view of the page.
 
+<Quiz questionId="4665f339-24c6-41ea-8e93-9cf8de501f5b" />
+
 React Hooks are functions that 'hook' into different parts of React Components allowing you to do things like updating the view when a variable's value is changed, or running some JS code automatically every time the page is loaded or a variable is changed, and many more cool things! We will primarily focus on three React hooks which are used 95% of the time - **`useState`, `useEffect`, and `useRef`**.
 
 ### useState
@@ -294,6 +306,8 @@ function StateWithInput() {
 **[Run it yourself to see it in action](https://codesandbox.io/s/young-microservice-c1e5be?file=/src/App.js)**
 
 We see the text displayed on the HTML changes as the content of the input box changes. Great!
+
+<Quiz questionId="27b8acaf-2d9b-4b55-b88f-fd521e3c1aac" />
 
 Last thing I want to say about useState is that you can also use it for more than just basic types like strings and numbers. You can also use them to store arrays and objects. However, there is a caveat here. Let's look at an example:
 
@@ -460,7 +474,11 @@ function DependentEffect() {
 
 **[Run it yourself to see it in action](https://codesandbox.io/s/cold-darkness-eub0eh?file=/src/App.js)**
 
+<Quiz questionId="e27e7555-0f31-429f-ac77-207373149378" />
+
 If you run the above code, and try typing some letters, you will see the recommendations list automatically gets updated as you add/remove new characters in the search box. This is because when you update the input box, the value of `searchText` is updated through the `onChange` handler, which triggers the `useEffect`, which updates the `recommendations` list, which updates the HTML view.
+
+<Quiz questionId="53346a89-ee63-4318-b9c4-ea016e0b5def" />
 
 You can also similarly create side effects which are dependent on multiple state variables, not just one. If any of the dependent variables change, the side effect is run. You do this by just adding more state variables to the dependency array.
 
@@ -469,6 +487,8 @@ useEffect(() => {
     // Some code
 }, [stateVar1, stateVar2, stateVar3, andSoOn])
 ```
+
+<Quiz questionId="3f615f81-ab26-486b-9665-e9615f4a1b8d" />
 
 ### useRef
 `useRef` is another React hook that is somewhat commonly used. It is quite similar to `useState` on the surface, but has some subtle differences that are actually quite important which make this React Hook important to learn. 
@@ -582,6 +602,8 @@ function InputFocus() {
 
 When you run this above example, you will notice that as soon as the page loads, the `input` element is already in focus i.e. you can start typing without clicking on it first. This is because we hold a reference to the `input` element, and have a `useEffect` that runs on page load due to having an empty dependency array, that focuses on the `input` element.
 
+<Quiz questionId="a5533750-da4a-42a4-81d0-2afb9009a529" />
+
 ## React File Structure
 Great, we have covered the main concepts you should know if you're just getting started with React. But so far, we have only dealt with isolated component examples. How does an actual React project look like?
 
@@ -652,6 +674,8 @@ This is great because you don't have to deal with things like React Router, and 
 
 You can also do multilevel routing by creating subfolders under the `pages/` folder. For example, something like `pages/tracks/freshman.js` will have the route `YOUR_DOMAIN/tracks/freshman`.
 
+<Quiz questionId="f6735f24-7539-4998-bb46-3e5c00b14afd" />
+
 ### Writing APIs in Next
 There is one special folder under `pages/` however which was also autogenerated. The `pages/api` folder. Unlike regular pages, which render HTML views, anything under the `pages/api` folder acts as an API endpoint.
 
@@ -667,6 +691,8 @@ This is a very Express-like function. If you were to go to `YOUR_DOMAIN/api/hell
 
 Similar to regular HTML views, you can create API endpoints under `pages/api` just by creating new files, and the endpoint routes are based on the filename.
 
+<Quiz questionId="ff3c1f4e-f2c4-4d8f-9c51-bec1cc201c01" />
+
 ## Conclusion
 I hope this article was helpful to you and can act as a crash course. I deliberately focused more on React than Next here, as getting used to the Frontend part is going to be more relevant for us than the Backend part. Also, backend code is basically regular Javascript, whereas Frontend is JSX which I wanted to get you more comfortable with.
 
@@ -678,3 +704,8 @@ I've listed some additional readings and videos that I would recommend to get an
 - [Next.js in 100 Seconds // Plus full tutorial](https://www.youtube.com/watch?v=Sklc_fQBmcs)
 - [Scrimba's Full React Course](https://scrimba.com/learn/learnreact)
 - [Next.js Crash Course](https://www.youtube.com/watch?v=mTz0GXj8NN0)
+
+## DYOR Questions
+<Quiz questionId="0998b476-55c7-4386-9313-e917b15e695a" />
+
+<SubmitQuiz />
