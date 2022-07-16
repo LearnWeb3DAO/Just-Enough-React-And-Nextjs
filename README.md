@@ -39,11 +39,7 @@ function ShoppingList() {
 }
 ```
 
-<iframe src="https://codesandbox.io/embed/icy-water-xrm2ch?fontsize=14&hidenavigation=1&theme=dark"
-     style={{ width: '100%', height: '500px', border: '0', borderRadius: '4px', overflow: 'hidden' }}
-     title="icy-water-xrm2ch"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"/>
+<CodeSandbox title="icy-water-xrm2ch" />
 
 Great, but this isn't much different from HTML. But what if you wanted to render a list of items based on an array?
 
@@ -62,11 +58,7 @@ function ShoppingList() {
 }
 ```
 
-<iframe src="https://codesandbox.io/embed/confident-tesla-5l3k1t?fontsize=14&hidenavigation=1&theme=dark"
-     style={{ width: '100%', height: '500px', border: '0', borderRadius: '4px', overflow: 'hidden' }}
-     title="icy-water-xrm2ch"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"/>
+<CodeSandbox title="confident-tesla-5l3k1t" />
 
 Wow, look at that! We just used Javascript inside HTML. In JSX, you can write Javascript inside HTML by wrapping the JS code in curly braces `{` and `}`. Actually though, if you think about this a little more, you will realize what is happening. `.map()` is a Javascript function, which loops over an array and returns something for each item. In this case, it is looping over the `items` array and returning an `li` element, that has the value of the Javascript variable `item` within it, which is HTML. Get it? 🤔
 
@@ -140,11 +132,7 @@ function Card({name, job}) {
 }
 ```
 
-<iframe src="https://codesandbox.io/embed/zealous-carson-44om2s?fontsize=14&hidenavigation=1&theme=dark"
-     style={{ width: '100%', height: '500px', border: '0', borderRadius: '4px', overflow: 'hidden' }}
-     title="icy-water-xrm2ch"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"/>
+<CodeSandbox title="zealous-carson-44om2s" />
 
 The plain HTML example reused the same code three times, even though the only thing that actually changed was just the name of the person and their job title. 
 
@@ -198,11 +186,7 @@ function Button() {
 }
 ```
 
-<iframe src="https://codesandbox.io/embed/quizzical-sammet-59fi5i?fontsize=14&hidenavigation=1&theme=dark"
-     style={{ width: '100%', height: '500px', border: '0', borderRadius: '4px', overflow: 'hidden' }}
-     title="icy-water-xrm2ch"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"/>
+<CodeSandbox title="quizzical-sammet-59fi5i" />
 
 We have a JSX Function called `Button`. Within this function, we have another function called `handleClick`. In the HTML `<button>` tag, we specify `onClick={handleClick}` so when the button is clicked, the `handleClick` function is called. This function is only available inside the `Button` component. Clicking the button on the web app will print `Hello` in the browser console. This is how we build interactive websites with React!
 
@@ -226,11 +210,7 @@ function PrintTypedText() {
 }
 ```
 
-<iframe src="https://codesandbox.io/embed/mutable-feather-el4sbe?fontsize=14&hidenavigation=1&theme=dark"
-     style={{ width: '100%', height: '500px', border: '0', borderRadius: '4px', overflow: 'hidden' }}
-     title="icy-water-xrm2ch"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"/>
+<CodeSandbox title="mutable-feather-el4sbe" />
 
 The HTML `input` element provides a handy event listener - `onChange` - that is triggered every time the text in that input box changes (typing a new character, deleting a character, etc.). 
 
@@ -262,11 +242,7 @@ function DoesNotWork() {
 }
 ```
 
-<iframe src="https://codesandbox.io/embed/romantic-euclid-44hh8x?fontsize=14&hidenavigation=1&theme=dark"
-     style={{ width: '100%', height: '500px', border: '0', borderRadius: '4px', overflow: 'hidden' }}
-     title="icy-water-xrm2ch"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"/>
+<CodeSandbox title="romantic-euclid-44hh8x" />
 
 No matter how many times you click the `Increment` button, the displayed number on the screen will be stuck at `0`. This is because when you update regular variables like `myNumber` from within a React component, even though the value is updated, React does not actually re-render the view of the web app. It does not automatically update the HTML view of the page.
 
@@ -300,11 +276,7 @@ function ThisWorks() {
 }
 ```
 
-<iframe src="https://codesandbox.io/embed/intelligent-hoover-31bwmg?fontsize=14&hidenavigation=1&theme=dark"
-     style={{ width: '100%', height: '500px', border: '0', borderRadius: '4px', overflow: 'hidden' }}
-     title="icy-water-xrm2ch"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"/>
+<CodeSandbox title="intelligent-hoover-31bwmg" />
 
 If you try to run the above code, you will see the view of the web app automatically gets updated to reflect the new value of the variable. 
 
@@ -331,11 +303,7 @@ function StateWithInput() {
 }
 ```
 
-<iframe src="https://codesandbox.io/embed/young-microservice-c1e5be?fontsize=14&hidenavigation=1&theme=dark"
-     style={{ width: '100%', height: '500px', border: '0', borderRadius: '4px', overflow: 'hidden' }}
-     title="icy-water-xrm2ch"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"/>
+<CodeSandbox title="young-microservice-c1e5be" />
 
 We see the text displayed on the HTML changes as the content of the input box changes. Great!
 
@@ -371,12 +339,7 @@ function StateArrayDoesNotWork() {
 }
 ```
 
-<iframe src="https://codesandbox.io/embed/kind-jasper-vbs0f9?fontsize=14&hidenavigation=1&theme=dark"
-     style={{ width: '100%', height: '500px', border: '0', borderRadius: '4px', overflow: 'hidden' }}
-     title="icy-water-xrm2ch"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"/>
-
+<CodeSandbox title="kind-jasper-vbs0f9" />
 
 If you try to run this, you will see no fruits get displayed on the screen. Also notice that we are not using the `setFruits` function anywhere, instead just trying to `.push` to the `fruits` array. 
 
@@ -414,11 +377,7 @@ function StateArray() {
 }
 ```
 
-<iframe src="https://codesandbox.io/embed/suspicious-monad-gpes3r?fontsize=14&hidenavigation=1&theme=dark"
-     style={{ width: '100%', height: '500px', border: '0', borderRadius: '4px', overflow: 'hidden' }}
-     title="icy-water-xrm2ch"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"/>
+<CodeSandbox title="suspicious-monad-gpes3r" />
 
 If you try to run the above code, you will see it works as expected. Every time you press the button, the current text from the input box is added into the array, which causes the list of fruits displayed on the HTML to be updated. You can keep adding as many fruits as you would like!
 
@@ -466,11 +425,7 @@ function LoadDataFromServer() {
 }
 ```
 
-<iframe src="https://codesandbox.io/embed/practical-cache-ib3c0f?fontsize=14&hidenavigation=1&theme=dark"
-     style={{ width: '100%', height: '500px', border: '0', borderRadius: '4px', overflow: 'hidden' }}
-     title="icy-water-xrm2ch"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"/>
+<CodeSandbox title="practical-cache-ib3c0f" />
 
 If you run the above code from the link, you will see it displays `Loading...` for 5 seconds on the screen, and then displays `ABCDEF`. It's because `apiCall` is a function that just waits for 5 seconds and then returns the string `ABCDEF`. 
 
@@ -517,11 +472,7 @@ function DependentEffect() {
 }
 ```
 
-<iframe src="https://codesandbox.io/embed/cold-darkness-eub0eh?fontsize=14&hidenavigation=1&theme=dark"
-     style={{ width: '100%', height: '500px', border: '0', borderRadius: '4px', overflow: 'hidden' }}
-     title="icy-water-xrm2ch"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"/>
+<CodeSandbox title="cold-darkness-eub0eh" />
 
 <Quiz questionId="e27e7555-0f31-429f-ac77-207373149378" />
 
@@ -585,11 +536,7 @@ function CounterWithRef() {
 }
 ```
 
-<iframe src="https://codesandbox.io/embed/small-paper-9ecbfp?fontsize=14&hidenavigation=1&theme=dark"
-     style={{ width: '100%', height: '500px', border: '0', borderRadius: '4px', overflow: 'hidden' }}
-     title="icy-water-xrm2ch"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"/>
+<CodeSandbox title="small-paper-9ecbfp" />
 
 If you run the above code, you will notice that every time you click the button, the value is incremented and printed in the browser console, but the HTML view doesn't actually update. In fact, the HTML view doesn't display anything, because the initial value of `myNumber.current` is `undefined` and since the HTML doesn't update, it stays `undefined` as far as the HTML is concerned even though the value is actually being updated.
 
@@ -623,11 +570,7 @@ function AsyncStateVariables() {
 }
 ```
 
-<iframe src="https://codesandbox.io/embed/reverent-lichterman-k4n448?fontsize=14&hidenavigation=1&theme=dark"
-     style={{ width: '100%', height: '500px', border: '0', borderRadius: '4px', overflow: 'hidden' }}
-     title="icy-water-xrm2ch"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"/>
+<CodeSandbox title="reverent-lichterman-k4n448" />
 
 When you run this, notice what happens on the view and what happens in the console. When you first click the button, the state variable should be updated to `1` - and that's what happens on the view, the web page displays `1`. But if you look at the browser console, the value `0` is printed instead of `1`. This pattern continues as you keep clicking the button. 
 
@@ -655,11 +598,7 @@ function InputFocus() {
 
 ```
 
-<iframe src="https://codesandbox.io/embed/input-focus-zntci?fontsize=14&hidenavigation=1&theme=dark"
-     style={{ width: '100%', height: '500px', border: '0', borderRadius: '4px', overflow: 'hidden' }}
-     title="icy-water-xrm2ch"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"/>
+<CodeSandbox title="input-focus-zntci" />
 
 When you run this above example, you will notice that as soon as the page loads, the `input` element is already in focus i.e. you can start typing without clicking on it first. This is because we hold a reference to the `input` element, and have a `useEffect` that runs on page load due to having an empty dependency array, that focuses on the `input` element.
 
